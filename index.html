@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
-        /* Cursor espada para desktop */
+        /* Cursor espada em toda a página no desktop */
         @media (hover: hover) and (pointer: fine) {
             body {
-                cursor: url('https://i.imgur.com/GZqfDtk.png'), auto;
-                /* Link para uma imagem PNG pequena de espada */
+                cursor: url('https://cur.cursors-4u.net/cursors/cur-11/cur1035.cur'), auto;
             }
         }
 
@@ -113,6 +112,7 @@
             transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
             box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
             user-select: none;
+            cursor: inherit; /* Para não sobrescrever o cursor do body */
         }
 
             .link-button i {
@@ -142,30 +142,6 @@
                 color: #ff0000;
                 font-size: 18px;
             }
-
-        .heart {
-            position: fixed;
-            bottom: -50px;
-            color: #ff3b3b;
-            font-size: 20px;
-            animation-name: fall;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            pointer-events: none;
-            user-select: none;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
     </style>
 </head>
 <body>
@@ -199,40 +175,31 @@
         </div>
     </div>
 
-    <!-- Corações animados -->
-    <script>
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (3 + Math.random() * 3) + 's';
-            heart.style.fontSize = (15 + Math.random() * 20) + 'px';
-            heart.style.opacity = Math.random();
-            heart.style.animationDelay = Math.random() * 5 + 's';
-            heart.innerHTML = '❤️';
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 8000);
-        }
-
-        setInterval(createHeart, 500);
-    </script>
-
-    <!-- Música de fundo -->
-    <audio autoplay loop muted id="background-audio" preload="auto">
+    <!-- Música de fundo 1 (Lo-fi chill) -->
+    <audio autoplay loop muted id="bg-audio-1" preload="auto">
         <source src="https://cdn.pixabay.com/download/audio/2021/11/02/audio_29bb317b8c.mp3?filename=lofi-chill-11343.mp3" type="audio/mpeg" />
+        Seu navegador não suporta áudio HTML5.
+    </audio>
+
+    <!-- Música de fundo 2 (Som ambiente: chuva suave) -->
+    <audio autoplay loop muted id="bg-audio-2" preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/28/audio_4ea3e7b044.mp3?filename=rain-ambient-110605.mp3" type="audio/mpeg" />
         Seu navegador não suporta áudio HTML5.
     </audio>
 
     <script>
         // Ativar som ao toque/click (especialmente em celular)
         document.body.addEventListener('click', () => {
-            const audio = document.getElementById('background-audio');
-            if (audio.paused) {
-                audio.muted = false;
-                audio.play();
+            const audio1 = document.getElementById('bg-audio-1');
+            const audio2 = document.getElementById('bg-audio-2');
+
+            if (audio1.paused) {
+                audio1.muted = false;
+                audio1.play();
+            }
+            if (audio2.paused) {
+                audio2.muted = false;
+                audio2.play();
             }
         }, { once: true });
 
