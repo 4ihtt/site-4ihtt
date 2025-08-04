@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background: url('https://images.unsplash.com/photo-1604079628044-943f69c54dcb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile {
+    margin-top: 60px;
+    text-align: center;
+}
+
+    .profile img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+    }
+
+    .profile h1 {
+        margin: 15px 0 5px;
+        font-size: 28px;
+        text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+
+    .profile p {
+        margin: 0;
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+.social-icons {
+    margin: 20px 0;
+}
+
+    .social-icons a {
+        color: #fff;
+        font-size: 22px;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: transform 0.2s;
+    }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+.links {
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.link-button {
+    background: rgba(0,0,0,0.6);
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+    .link-button i {
+        margin-right: 12px;
+        font-size: 20px;
+    }
+
+    .link-button:hover {
+        background: rgba(0,0,0,0.8);
+    }
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
