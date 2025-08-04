@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>4ih.tt - Painel Exclusivo</title>
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            color: #fff;
+            background: url('https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Perfil com foto, título e descrição */
+        .profile {
+            margin-bottom: 25px;
+        }
+
+            .profile img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                border: 3px solid #fff;
+                object-fit: cover;
+                box-shadow: 0 0 10px rgba(255,255,255,0.5);
+            }
+
+            .profile h1 {
+                margin: 15px 0 5px;
+                font-size: 36px;
+                text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                font-weight: 700;
+            }
+
+                .profile h1 i {
+                    color: #25D366; /* Verde WhatsApp para o ícone */
+                    font-size: 38px;
+                }
+
+            .profile p {
+                font-size: 16px;
+                opacity: 0.85;
+                font-weight: 600;
+                margin-bottom: 30px;
+            }
+
+        /* Botões links */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .link-button {
+            background: rgba(0,0,0,0.6);
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+            .link-button i {
+                margin-right: 12px;
+                font-size: 22px;
+            }
+
+            .link-button:hover {
+                background: rgba(0,0,0,0.85);
+                box-shadow: 0 0 15px #25D366;
+            }
+
+            .link-button.instagram:hover {
+                box-shadow: 0 0 15px #E1306C;
+            }
+
+        /* Frase de apoio */
+        .support-text {
+            font-size: 14px;
+            color: #ccc;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-style: italic;
+        }
+
+            .support-text i {
+                color: #25D366;
+                font-size: 18px;
+            }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 500px) {
+            .container {
+                padding: 25px 20px;
+            }
+
+            .profile img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile h1 {
+                font-size: 28px;
+            }
+
+                .profile h1 i {
+                    font-size: 32px;
+                }
+
+            .profile p {
+                font-size: 14px;
+            }
+
+            .link-button {
+                font-size: 16px;
+                padding: 12px 18px;
+            }
+
+                .link-button i {
+                    font-size: 18px;
+                }
+
+            .support-text {
+                font-size: 12px;
+            }
+
+                .support-text i {
+                    font-size: 16px;
+                }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile fade-in">
+            <img src="https://i.pinimg.com/736x/f8/02/a6/f802a67b3e2bac80fb00a958293922de.jpg" alt="Ícone 4ih.tt" />
+            <h1><i class="fas fa-network-wired"></i> 4ih.tt</h1>
+            <p>Aqui estão todas as redes oficiais da 4ih.tt — conecte-se com a gente</p>
+        </div>
+
+        <div class="links fade-in">
+            <a class="link-button" href="https://wa.me/13652556933" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Contato WhatsApp
+            </a>
+
+            <a class="link-button" href="https://chat.whatsapp.com/LTyQidMcTLoHOrnuDotbKy?mode=ac_t" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Grupo 01
+            </a>
+
+            <a class="link-button instagram" href="https://www.instagram.com/4ih.tt/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram @4ih.tt
+            </a>
+        </div>
+
+        <div class="support-text fade-in">
+            <i class="fas fa-headset"></i>
+            Caso precise de ajuda, nossa equipe está pronta para atender você.
+        </div>
+    </div>
+</body>
+</html>
