@@ -1,11 +1,22 @@
-const clickSound = new Audio('https://freesound.org/data/previews/256/256113_3263906-lq.mp3');
-clickSound.volume = 0.2;
+// script_v2.js
 
-document.querySelectorAll('.link-button').forEach(button => {
-    button.addEventListener('click', () => {
-        clickSound.currentTime = 0;
-        clickSound.play();
-
-        console.log(`Você clicou no link: ${button.textContent.trim()}`);
+// Rolar suavemente para as seções
+document.querySelectorAll('a[href^="#"]').forEach(ancora => {
+    ancora.addEventListener('click', function (e) {
+        e.preventDefault();
+        const id = this.getAttribute('href');
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
+
+// Criar botão flutuante de WhatsApp
+window.onload = function () {
+    const botao = document.createElement("a");
+    botao.href = "https://wa.me/SEU_NUMERO";
+    botao.className = "zap-float";
+    botao.innerHTML = "?? Suporte";
+
+    document.body.appendChild(botao);
+};

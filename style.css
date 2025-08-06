@@ -1,92 +1,121 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
-    background: url('https://images.unsplash.com/photo-1604079628044-943f69c54dcb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-sizing: border-box;
 }
 
-.profile {
-    margin-top: 60px;
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0d0d0d;
+    color: #eee;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+header {
+    background: linear-gradient(135deg, #00ffc3, #003dff);
+    padding: 60px 0;
     text-align: center;
 }
 
-    .profile img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        border: 3px solid #fff;
+    header h1 {
+        font-size: 3em;
+        color: #0d0d0d;
     }
 
-    .profile h1 {
-        margin: 15px 0 5px;
-        font-size: 28px;
-        text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    header p {
+        color: #111;
+        font-weight: bold;
     }
 
-    .profile p {
-        margin: 0;
-        font-size: 14px;
-        opacity: 0.8;
-    }
-
-.social-icons {
-    margin: 20px 0;
+.info h2, .calltoaction h2 {
+    color: #00ffc3;
+    margin-bottom: 20px;
 }
 
-    .social-icons a {
-        color: #fff;
-        font-size: 22px;
-        margin: 0 10px;
-        text-decoration: none;
-        transition: transform 0.2s;
+.info p {
+    font-size: 1.1em;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid #00ffc3;
+    border-radius: 8px;
+}
+
+    .card h3 {
+        color: #00ffc3;
     }
 
-        .social-icons a:hover {
-            transform: scale(1.2);
+    .card ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+        .card ul li {
+            margin: 8px 0;
         }
 
-.links {
-    width: 90%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 40px;
+.calltoaction {
+    background: #111;
+    text-align: center;
+    padding: 60px 0;
 }
 
-.link-button {
-    background: rgba(0,0,0,0.6);
-    padding: 15px 20px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #00ffc3;
+    color: #111;
+    font-weight: bold;
+    border-radius: 10px;
     text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
-    .link-button i {
-        margin-right: 12px;
-        font-size: 20px;
+    .btn:hover {
+        background: #00ccaa;
     }
 
-    .link-button:hover {
-        background: rgba(0,0,0,0.8);
-    }
-
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
+footer {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+.redes a {
+    color: #00ffc3;
+    margin: 0 10px;
+    text-decoration: none;
 }
+
+    .redes a:hover {
+        text-decoration: underline;
+    }
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 10px #000;
+    z-index: 999;
+    transition: 0.3s;
+}
+
+    .whatsapp-float:hover {
+        background: #1ebd5f;
+    }
