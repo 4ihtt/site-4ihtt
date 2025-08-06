@@ -2,84 +2,70 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>XITER STORE - iPhone & PC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XITER STORE - Ultimate Hack</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <div class="background-gradient"></div>
+
+    <header class="hero">
         <div class="container">
-            <h1>XITER STORE</h1>
-            <p>Seu cheat privado para iPhone e PC - Atualizações frequentes e suporte total</p>
+            <h1 class="glow">XITER STORE</h1>
+            <p>🔥 Cheats para iPhone (TrollStore, Jailbreak, iMazing) e PC</p>
+            <button class="botao-glow" onclick="abrirModal()">ADQUIRIR</button>
         </div>
     </header>
 
-    <section class="info">
+    <section class="sobre">
         <div class="container">
-            <h2>🔥 Sobre o XITER</h2>
-            <p>Cheat otimizado e protegido. Compatível com <strong>TrollStore, Jailbreak, iMazing e PC</strong>.</p>
+            <h2 class="glow">💎 Sobre o Produto</h2>
+            <p>Xiter premium com anti-ban, atualizações constantes e suporte total. Compatível com iOS e PC.</p>
 
-            <div class="card">
-                <h3>💵 Preço</h3>
-                <p><strong>R$ 45,00</strong> - Acesso por 60 dias.</p>
+            <div class="card neon-box">
+                <h3>💰 Valor</h3>
+                <p>R$ 45,00 / 60 dias</p>
             </div>
 
-            <div class="card">
-                <h3>📲 Compatibilidade</h3>
+            <div class="card neon-box">
+                <h3>🚀 Plataformas Suportadas</h3>
                 <ul>
-                    <li>📱 iPhone (TrollStore / Jailbreak / iMazing)</li>
-                    <li>🖥️ PC (Windows / Emuladores)</li>
+                    <li>✅ iPhone (TrollStore / Jailbreak / iMazing)</li>
+                    <li>✅ Windows PC</li>
                 </ul>
             </div>
-
-            <div class="card">
-                <h3>🔐 Segurança</h3>
-                <p>Sistema seguro, suporte imediato e atualizações regulares.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="pagamento">
-        <div class="container">
-            <h2>💳 Formas de Pagamento</h2>
-            <p>Você pode pagar por <strong>PIX</strong>. Copie a chave abaixo ou escaneie o QR Code:</p>
-            <div class="pix-box">
-                <p id="chave-pix">@xiter.com</p>
-                <button onclick="copiarPix()">📋 Copiar PIX</button>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?data=cheatstorepix@xiter.com&size=150x150" alt="QR Code PIX">
-            </div>
-        </div>
-    </section>
-
-    <section class="calltoaction">
-        <div class="container">
-            <h2>💬 Suporte Rápido</h2>
-            <p>Pronto para ativar seu XITER?</p>
-            <a href="https://wa.me/13652556933" class="btn">FALAR NO WHATSAPP</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>© 2025 XITER STORE — Todos os direitos reservados.</p>
-            <p>Siga-nos nas redes sociais:</p>
-            <div class="redes">
-                <a href="https://t.me/seutelegram" target="_blank">Telegram</a>
-                <a href="https://instagram.com/seuinsta" target="_blank">Instagram</a>
-                <a href="https://tiktok.com/@seutiktok" target="_blank">TikTok</a>
-            </div>
+            <p>&copy; 2025 XITER STORE. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <a href="https://wa.me/13652556933" class="whatsapp-float">💬 Suporte</a>
 
-    <script>
-        function copiarPix() {
-            const chave = document.getElementById("chave-pix").innerText;
-            navigator.clipboard.writeText(chave);
-            alert("Chave PIX copiada!");
-        }
-    </script>
+    <!-- MODAL DE PAGAMENTO -->
+    <div class="modal-overlay" id="pagamentoModal">
+        <div class="modal">
+            <h2>💳 Finalizar Compra</h2>
+            <p>Pagamento via PIX — chave ou QR Code</p>
+            <div class="pix-box">
+                <p id="chave-pix">cheatstorepix@xiter.com</p>
+                <button onclick="copiarPix()">📋 Copiar Chave</button>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?data=cheatstorepix@xiter.com&size=160x160" alt="QR Code PIX">
+            </div>
+            <form class="formulario">
+                <label for="email">📧 Seu e-mail (para envio do XITER):</label>
+                <input type="email" id="email" placeholder="exemplo@gmail.com" required />
+                <button type="submit">Confirmar Pagamento</button>
+            </form>
+            <button class="fechar" onclick="fecharModal()">✖</button>
+        </div>
+    </div>
+
+    <script src="script_v1.js"></script>
+    <script src="script_v2.js"></script>
 </body>
 </html>

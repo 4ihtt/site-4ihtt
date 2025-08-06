@@ -1,6 +1,11 @@
-// script_v1.js
+// Animação suave ao rolar a página
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
+    const elementos = document.querySelectorAll("section");
+    elementos.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transition = "all 0.8s ease-out";
+        el.style.transform = "translateY(40px)";
+    });
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -9,14 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 entry.target.style.transform = "translateY(0)";
             }
         });
-    }, {
-        threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-        section.style.opacity = 0;
-        section.style.transform = "translateY(30px)";
-        section.style.transition = "all 0.6s ease-out";
-        observer.observe(section);
-    });
+    elementos.forEach(el => observer.observe(el));
 });

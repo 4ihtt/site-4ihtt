@@ -5,138 +5,209 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #0c0c0c;
-    color: #f2f2f2;
+    color: #f1f1f1;
+    overflow-x: hidden;
+}
+
+.background-gradient {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, #00ffe7, #002fff, #0c0c0c);
+    z-index: -1;
+    filter: blur(120px);
+    opacity: 0.1;
+    animation: float 20s infinite alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
 }
 
 .container {
-    width: 90%;
     max-width: 1000px;
-    margin: auto;
-    padding: 40px 0;
-}
-
-header {
-    background: linear-gradient(135deg, #0ff, #3f5efb);
-    text-align: center;
     padding: 60px 20px;
-    color: #111;
+    margin: auto;
 }
 
-    header h1 {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 3em;
+.hero {
+    text-align: center;
+    padding: 100px 20px 80px;
+}
+
+.glow {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8em;
+    background: linear-gradient(90deg, #00fff2, #0066ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.botao-glow {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #00fff2, #0066ff);
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1em;
+    box-shadow: 0 0 15px #00fff2;
+    transition: 0.3s;
+}
+
+    .botao-glow:hover {
+        opacity: 0.85;
     }
 
-    header p {
-        font-size: 1.2em;
-        font-weight: 500;
+.sobre {
+    background-color: #121212;
+    border-top: 1px solid #222;
+}
+
+    .sobre h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
     }
-
-section {
-    padding: 40px 20px;
-}
-
-h2 {
-    color: #00ffff;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-}
 
 .card {
-    background: #1e1e1e;
+    margin-top: 30px;
     padding: 20px;
-    border-left: 4px solid #0ff;
-    margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
-    .card h3 {
-        margin-bottom: 10px;
-        color: #00ccff;
-    }
+.neon-box {
+    background: #1a1a1a;
+    border: 1px solid #00ffff40;
+    box-shadow: 0 0 15px #00ffe740;
+}
 
 ul {
     list-style: none;
+    padding-left: 0;
 }
 
     ul li {
-        margin: 8px 0;
-        font-size: 1.05em;
-    }
-
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #00ffff;
-    color: #000;
-    border-radius: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-    margin-top: 20px;
-}
-
-    .btn:hover {
-        background: #00cccc;
+        margin: 6px 0;
     }
 
 footer {
-    background: #111;
     text-align: center;
     padding: 40px 20px;
+    background: #0b0b0b;
+    color: #777;
 }
-
-    footer .redes a {
-        color: #00ccff;
-        margin: 0 10px;
-        text-decoration: none;
-    }
-
-        footer .redes a:hover {
-            text-decoration: underline;
-        }
 
 .whatsapp-float {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 20px;
+    right: 20px;
     background: #25D366;
     color: white;
     padding: 12px 20px;
-    border-radius: 30px;
+    border-radius: 50px;
     font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 0 10px #000;
-    z-index: 999;
+    box-shadow: 0 0 20px #1ebd5f;
     transition: 0.3s;
+    z-index: 999;
 }
 
     .whatsapp-float:hover {
-        background: #1ebd5f;
+        transform: scale(1.05);
+    }
+
+/* MODAL DE PAGAMENTO */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: #111;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 30px #00ffff66;
+    text-align: center;
+    position: relative;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal h2 {
+    color: #00ffff;
+    margin-bottom: 10px;
+}
+
+.modal .fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+    .modal .fechar:hover {
+        color: #fff;
     }
 
 .pix-box {
-    background: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
     text-align: center;
     margin-top: 20px;
 }
 
     .pix-box p {
-        font-size: 1.2em;
-        margin-bottom: 10px;
+        font-size: 1.1em;
         color: #0ff;
-        word-break: break-word;
+        margin-bottom: 10px;
     }
 
     .pix-box button {
         padding: 10px 20px;
-        background: #00ccff;
+        background: #00ffff;
         border: none;
-        color: #111;
+        color: #000;
         font-weight: bold;
         border-radius: 8px;
         cursor: pointer;
@@ -144,11 +215,47 @@ footer {
     }
 
         .pix-box button:hover {
-            background: #00aacc;
+            background: #00cccc;
         }
 
     .pix-box img {
         margin-top: 10px;
         width: 150px;
         height: 150px;
+    }
+
+/* Formulário */
+.formulario label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #0ff;
+    text-align: left;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 1em;
+}
+
+.formulario button[type="submit"] {
+    background: #00ffff;
+    color: #000;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+    .formulario button[type="submit"]:hover {
+        background: #00cccc;
     }
