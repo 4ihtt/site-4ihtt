@@ -4,8 +4,302 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>XITER STORE - Ultimate Hack</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        /* CSS embutido para facilitar o teste */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0b0b0b, #1a1a1a);
+            color: #ddd;
+            overflow-x: hidden;
+        }
+
+        .background-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0f0f0f 0%, #2e003e 100%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #ff0080;
+            text-shadow: 0 0 10px #ff0080;
+        }
+
+        .glow {
+            color: #ff0080;
+            text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 40px #ff3399;
+        }
+
+        .hero {
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+            .hero p {
+                font-weight: 600;
+                font-size: 1.2rem;
+                color: #ffa0c6;
+                margin-bottom: 30px;
+            }
+
+        .botao-glow {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            background: linear-gradient(45deg, #ff0080, #ff33aa);
+            color: white;
+            padding: 15px 50px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 15px #ff33aa;
+            transition: all 0.3s ease;
+        }
+
+            .botao-glow:hover {
+                box-shadow: 0 0 40px #ff66cc;
+                transform: scale(1.05);
+            }
+
+        .sobre {
+            background: #1b0b1b;
+            padding: 40px 20px 60px;
+            border-radius: 20px;
+            margin: 0 20px 80px;
+            box-shadow: 0 0 40px #ff33aa55;
+        }
+
+        .card {
+            background: #2e002e;
+            padding: 20px;
+            margin: 15px auto;
+            border-radius: 15px;
+            max-width: 320px;
+            box-shadow: 0 0 10px #ff33aa, inset 0 0 10px #ff3399;
+            color: #f6c3e8;
+        }
+
+        .neon-box {
+            text-align: center;
+        }
+
+        .card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .card p, .card ul {
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+            .card ul li::before {
+                content: '✅ ';
+                color: #ff55bb;
+            }
+
+        footer {
+            text-align: center;
+            padding: 15px 10px;
+            background: #200020;
+            color: #ff66cc;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            font-size: 28px;
+            padding: 12px 18px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #25d366aa;
+            text-decoration: none;
+            z-index: 9999;
+            transition: background 0.3s;
+        }
+
+            .whatsapp-float:hover {
+                background: #1ebd5a;
+            }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+            .modal-overlay.active {
+                display: flex;
+            }
+
+        .modal {
+            background: #2a002a;
+            padding: 30px 40px;
+            border-radius: 25px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 20px #ff33aa;
+            color: #ff99cc;
+            position: relative;
+        }
+
+            .modal h2 {
+                margin-bottom: 20px;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 700;
+                font-size: 1.8rem;
+            }
+
+        .pix-box {
+            margin: 20px 0;
+        }
+
+            .pix-box p {
+                font-weight: 600;
+                margin-bottom: 10px;
+                font-size: 1.1rem;
+            }
+
+            .pix-box button {
+                padding: 8px 15px;
+                border: none;
+                background: #ff33aa;
+                color: white;
+                font-weight: 600;
+                border-radius: 12px;
+                cursor: pointer;
+                margin-bottom: 15px;
+                box-shadow: 0 0 10px #ff33aa;
+                transition: background 0.3s ease;
+            }
+
+                .pix-box button:hover {
+                    background: #ff66cc;
+                }
+
+            .pix-box img {
+                width: 160px;
+                height: 160px;
+                border-radius: 18px;
+                box-shadow: 0 0 25px #ff33aaaa;
+            }
+
+        .formulario {
+            margin-top: 15px;
+        }
+
+            .formulario input[type="email"] {
+                width: 100%;
+                padding: 10px 15px;
+                border-radius: 15px;
+                border: none;
+                font-size: 1rem;
+                outline: none;
+                box-shadow: 0 0 10px #ff55bbaa inset;
+                margin-bottom: 20px;
+            }
+
+            .formulario button[type="submit"] {
+                background: #ff33aa;
+                color: white;
+                padding: 12px 25px;
+                font-weight: 700;
+                border-radius: 50px;
+                cursor: pointer;
+                font-size: 1.1rem;
+                border: none;
+                box-shadow: 0 0 15px #ff33aa;
+                transition: background 0.3s ease;
+            }
+
+                .formulario button[type="submit"]:hover {
+                    background: #ff66cc;
+                }
+
+        .fechar {
+            background: transparent;
+            border: none;
+            color: #ff55bb;
+            font-size: 1.8rem;
+            font-weight: 900;
+            position: absolute;
+            top: 12px;
+            right: 25px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+            .fechar:hover {
+                color: #ff99cc;
+            }
+
+        select#produtoSelect {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 0 10px #ff55bbaa inset;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #ff66cc;
+            background: #3a003a;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+            select#produtoSelect:hover {
+                background: #4b004b;
+            }
+
+        /* Adicionei estilo para demo-imagem para ela ficar bonita e responsiva */
+        .demo-imagem-container {
+            max-width: 400px;
+            margin: 40px auto 80px;
+            text-align: center;
+        }
+
+        .demo-imagem {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 30px #ff33aa;
+        }
+    </style>
 </head>
 <body>
     <div class="background-gradient"></div>
@@ -38,34 +332,93 @@
         </div>
     </section>
 
+    <div class="demo-imagem-container">
+        <h3 class="glow">👾 Demonstração Visual do XITER</h3>
+        <img src="demo-xiter.png" alt="Demonstração XITER" class="demo-imagem" />
+    </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 XITER STORE. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/13652556933" class="whatsapp-float">💬 Suporte</a>
+    <a href="https://wa.me/13652556933" class="whatsapp-float" target="_blank" title="Suporte WhatsApp">💬 Suporte</a>
 
-    <!-- MODAL DE PAGAMENTO -->
     <div class="modal-overlay" id="pagamentoModal">
         <div class="modal">
             <h2>💳 Finalizar Compra</h2>
-            <p>Pagamento via PIX — chave ou QR Code</p>
+            <p><strong>1.</strong> Escolha a versão desejada:</p>
+            <select id="produtoSelect" onchange="atualizarChavePix()">
+                <option value="cheatstorepix@xiter.com">Versão para PC - AIMBOT + ESP</option>
+                <option value="ioscheatpix@xiter.com">Versão para iOS - TrollStore / Jailbreak</option>
+            </select>
+
+            <p><strong>2.</strong> Faça o pagamento via PIX (copia a chave ou use o QR Code):</p>
             <div class="pix-box">
                 <p id="chave-pix">cheatstorepix@xiter.com</p>
-                <button onclick="copiarPix()">📋 Copiar Chave</button>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?data=cheatstorepix@xiter.com&size=160x160" alt="QR Code PIX">
+                <button onclick="copiarPix()">📋 Copiar Chave PIX</button>
+                <img id="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?data=cheatstorepix@xiter.com&size=160x160" alt="QR Code PIX" />
             </div>
-            <form class="formulario">
-                <label for="email">📧 Seu e-mail (para envio do XITER):</label>
+
+            <p><strong>3.</strong> Envie seu e-mail para receber o XITER e confirme o pagamento:</p>
+            <form class="formulario" onsubmit="confirmarPagamento(event)">
                 <input type="email" id="email" placeholder="exemplo@gmail.com" required />
                 <button type="submit">Confirmar Pagamento</button>
             </form>
-            <button class="fechar" onclick="fecharModal()">✖</button>
+
+            <button class="fechar" onclick="fecharModal()" title="Fechar">✖</button>
         </div>
     </div>
 
-    <script src="script_v1.js"></script>
-    <script src="script_v2.js"></script>
+    <script>
+        // JavaScript embutido para facilitar teste
+        function abrirModal() {
+            document.getElementById("pagamentoModal").classList.add("active");
+        }
+        function fecharModal() {
+            document.getElementById("pagamentoModal").classList.remove("active");
+        }
+        function copiarPix() {
+            const chavePix = document.getElementById("chave-pix").textContent;
+            navigator.clipboard.writeText(chavePix)
+                .then(() => alert("Chave PIX copiada para a área de transferência!"))
+                .catch(() => alert("Falha ao copiar a chave PIX. Copie manualmente."));
+        }
+        function atualizarChavePix() {
+            const select = document.getElementById("produtoSelect");
+            const chavePix = document.getElementById("chave-pix");
+            const qrCode = document.getElementById("qr-code");
+
+            const chaveSelecionada = select.value;
+            chavePix.textContent = chaveSelecionada;
+            qrCode.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(chaveSelecionada)}&size=160x160`;
+        }
+        function confirmarPagamento(event) {
+            event.preventDefault();
+
+            const emailInput = document.getElementById("email");
+            const email = emailInput.value.trim();
+
+            if (!email) {
+                alert("Por favor, insira um e-mail válido.");
+                return;
+            }
+
+            const select = document.getElementById("produtoSelect");
+            const produtoNome = select.options[select.selectedIndex].text;
+
+            alert("Obrigado pelo pagamento! Agora envie seu comprovante pelo WhatsApp.");
+
+            const mensagem = encodeURIComponent(
+                `Olá, já realizei o pagamento do produto: ${produtoNome}.\nSegue o comprovante para liberar o acesso.\nMeu e-mail: ${email}`
+            );
+
+            const numeroWhats = "13652556933";
+            window.open(`https://wa.me/${numeroWhats}?text=${mensagem}`, "_blank");
+
+            fecharModal();
+        }
+    </script>
 </body>
 </html>

@@ -1,261 +1,293 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+﻿/* Mesma estrutura e estilos do CSS anterior, para manter o design limpo e moderno */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap');
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Inter', sans-serif;
-    background: #0c0c0c;
-    color: #f1f1f1;
+    background: linear-gradient(135deg, #0b0b0b, #1a1a1a);
+    color: #ddd;
     overflow-x: hidden;
 }
 
 .background-gradient {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top left, #00ffe7, #002fff, #0c0c0c);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #2e003e 100%);
     z-index: -1;
-    filter: blur(120px);
-    opacity: 0.1;
-    animation: float 20s infinite alternate;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    100% {
-        transform: translateY(-20px);
-    }
 }
 
 .container {
-    max-width: 1000px;
-    padding: 60px 20px;
-    margin: auto;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.hero {
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
     text-align: center;
-    padding: 100px 20px 80px;
+    margin-bottom: 10px;
+    color: #ff0080;
+    text-shadow: 0 0 10px #ff0080;
 }
 
 .glow {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.8em;
-    background: linear-gradient(90deg, #00fff2, #0066ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px #00ffff;
+    color: #ff0080;
+    text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 40px #ff3399;
 }
 
-.hero p {
-    font-size: 1.2em;
-    color: #ccc;
-    margin-top: 10px;
+.hero {
+    padding: 100px 20px 80px;
+    text-align: center;
 }
+
+    .hero p {
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: #ffa0c6;
+        margin-bottom: 30px;
+    }
 
 .botao-glow {
-    margin-top: 25px;
-    display: inline-block;
-    padding: 14px 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #ff0080, #ff33aa);
+    color: white;
+    padding: 15px 50px;
     border: none;
-    border-radius: 8px;
-    background: linear-gradient(90deg, #00fff2, #0066ff);
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1em;
-    box-shadow: 0 0 15px #00fff2;
-    transition: 0.3s;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ff33aa;
+    transition: all 0.3s ease;
 }
 
     .botao-glow:hover {
-        opacity: 0.85;
+        box-shadow: 0 0 40px #ff66cc;
+        transform: scale(1.05);
     }
 
 .sobre {
-    background-color: #121212;
-    border-top: 1px solid #222;
+    background: #1b0b1b;
+    padding: 40px 20px 60px;
+    border-radius: 20px;
+    margin: 0 20px 80px;
+    box-shadow: 0 0 40px #ff33aa55;
 }
 
-    .sobre h2 {
-        font-size: 2em;
-        margin-bottom: 15px;
-    }
-
 .card {
-    margin-top: 30px;
+    background: #2e002e;
     padding: 20px;
-    border-radius: 12px;
+    margin: 15px auto;
+    border-radius: 15px;
+    max-width: 320px;
+    box-shadow: 0 0 10px #ff33aa, inset 0 0 10px #ff3399;
+    color: #f6c3e8;
 }
 
 .neon-box {
-    background: #1a1a1a;
-    border: 1px solid #00ffff40;
-    box-shadow: 0 0 15px #00ffe740;
+    text-align: center;
 }
 
-ul {
+.card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.card p,
+.card ul {
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+.card ul {
     list-style: none;
     padding-left: 0;
 }
 
-    ul li {
-        margin: 6px 0;
+    .card ul li::before {
+        content: '✅ ';
+        color: #ff55bb;
     }
 
 footer {
     text-align: center;
-    padding: 40px 20px;
-    background: #0b0b0b;
-    color: #777;
+    padding: 15px 10px;
+    background: #200020;
+    color: #ff66cc;
+    font-weight: 600;
+    letter-spacing: 1.2px;
 }
 
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #25D366;
+    background: #25d366;
     color: white;
-    padding: 12px 20px;
-    border-radius: 50px;
-    font-weight: bold;
+    font-size: 28px;
+    padding: 12px 18px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #25d366aa;
     text-decoration: none;
-    box-shadow: 0 0 20px #1ebd5f;
-    transition: 0.3s;
-    z-index: 999;
+    z-index: 9999;
+    transition: background 0.3s;
 }
 
     .whatsapp-float:hover {
-        transform: scale(1.05);
+        background: #1ebd5a;
     }
 
-/* MODAL DE PAGAMENTO */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.85);
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 10000;
 }
+
+    .modal-overlay.active {
+        display: flex;
+    }
 
 .modal {
-    background: #111;
-    padding: 30px;
-    border-radius: 20px;
-    width: 90%;
+    background: #2a002a;
+    padding: 30px 40px;
+    border-radius: 25px;
     max-width: 400px;
-    box-shadow: 0 0 30px #00ffff66;
+    width: 90%;
     text-align: center;
+    box-shadow: 0 0 20px #ff33aa;
+    color: #ff99cc;
     position: relative;
-    animation: zoomIn 0.3s ease;
 }
 
-@keyframes zoomIn {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.modal h2 {
-    color: #00ffff;
-    margin-bottom: 10px;
-}
-
-.modal .fechar {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: transparent;
-    border: none;
-    color: #888;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-    .modal .fechar:hover {
-        color: #fff;
+    .modal h2 {
+        margin-bottom: 20px;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 700;
+        font-size: 1.8rem;
     }
 
 .pix-box {
-    text-align: center;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
     .pix-box p {
-        font-size: 1.1em;
-        color: #0ff;
+        font-weight: 600;
         margin-bottom: 10px;
+        font-size: 1.1rem;
     }
 
     .pix-box button {
-        padding: 10px 20px;
-        background: #00ffff;
+        padding: 8px 15px;
         border: none;
-        color: #000;
-        font-weight: bold;
-        border-radius: 8px;
+        background: #ff33aa;
+        color: white;
+        font-weight: 600;
+        border-radius: 12px;
         cursor: pointer;
         margin-bottom: 15px;
+        box-shadow: 0 0 10px #ff33aa;
+        transition: background 0.3s ease;
     }
 
         .pix-box button:hover {
-            background: #00cccc;
+            background: #ff66cc;
         }
 
     .pix-box img {
-        margin-top: 10px;
-        width: 150px;
-        height: 150px;
+        width: 160px;
+        height: 160px;
+        border-radius: 18px;
+        box-shadow: 0 0 25px #ff33aaaa;
     }
 
-/* Formul�rio */
-.formulario label {
-    display: block;
+.formulario {
     margin-top: 15px;
-    margin-bottom: 8px;
-    color: #0ff;
-    text-align: left;
 }
 
-.formulario input {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    background: #1a1a1a;
-    color: #fff;
-    font-size: 1em;
-}
+    .formulario input[type="email"] {
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 15px;
+        border: none;
+        font-size: 1rem;
+        outline: none;
+        box-shadow: 0 0 10px #ff55bbaa inset;
+        margin-bottom: 20px;
+    }
 
-.formulario button[type="submit"] {
-    background: #00ffff;
-    color: #000;
-    padding: 12px;
+    .formulario button[type="submit"] {
+        background: #ff33aa;
+        color: white;
+        padding: 12px 25px;
+        font-weight: 700;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        border: none;
+        box-shadow: 0 0 15px #ff33aa;
+        transition: background 0.3s ease;
+    }
+
+        .formulario button[type="submit"]:hover {
+            background: #ff66cc;
+        }
+
+.fechar {
+    background: transparent;
     border: none;
-    border-radius: 8px;
-    font-weight: bold;
+    color: #ff55bb;
+    font-size: 1.8rem;
+    font-weight: 900;
+    position: absolute;
+    top: 12px;
+    right: 25px;
     cursor: pointer;
-    width: 100%;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
-    .formulario button[type="submit"]:hover {
-        background: #00cccc;
+    .fechar:hover {
+        color: #ff99cc;
+    }
+
+.demo-imagem-container {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 10px;
+    background: #2c002c;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #ff33aa;
+}
+
+    .demo-imagem-container h3 {
+        margin-bottom: 15px;
+        font-family: 'Orbitron', sans-serif;
+        color: #ff44bb;
+        text-shadow: 0 0 10px #ff44bb;
+    }
+
+.demo-imagem {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #ff33aa88;
+    filter: brightness(1.1) contrast(1.2);
+    transition: transform 0.3s ease;
+}
+
+    .demo-imagem:hover {
+        transform: scale(1.05);
     }
