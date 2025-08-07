@@ -6,7 +6,7 @@
     <title>XITER STORE - Ultimate Hack</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <style>
-        /* CSS embutido para facilitar o teste */
+        /* Seu CSS, mantive igual */
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap');
 
         body {
@@ -287,7 +287,6 @@
                 background: #4b004b;
             }
 
-        /* Adicionei estilo para demo-imagem para ela ficar bonita e responsiva */
         .demo-imagem-container {
             max-width: 400px;
             margin: 40px auto 80px;
@@ -350,15 +349,15 @@
             <h2>💳 Finalizar Compra</h2>
             <p><strong>1.</strong> Escolha a versão desejada:</p>
             <select id="produtoSelect" onchange="atualizarChavePix()">
-                <option value="cheatstorepix@xiter.com">Versão para PC - AIMBOT + ESP</option>
-                <option value="ioscheatpix@xiter.com">Versão para iOS - TrollStore / Jailbreak</option>
+                <option value="f2da7147-d23b-4d69-b481-689080b5b843" data-nome="Versão para PC - AIMBOT + ESP">Versão para PC - AIMBOT + ESP</option>
+                <option value="f2da7147-d23b-4d69-b481-689080b5b843" data-nome="Versão para iOS - TrollStore / Jailbreak">Versão para iOS - TrollStore / Jailbreak</option>
             </select>
 
-            <p><strong>2.</strong> Faça o pagamento via PIX (copia a chave ou use o QR Code):</p>
+            <p><strong>2.</strong> Faça o pagamento via PIX (copie a chave ou use o QR Code):</p>
             <div class="pix-box">
-                <p id="chave-pix">cheatstorepix@xiter.com</p>
-                <button onclick="copiarPix()">📋 Copiar Chave PIX</button>
-                <img id="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?data=cheatstorepix@xiter.com&size=160x160" alt="QR Code PIX" />
+                <p id="chave-pix">f2da7147-d23b-4d69-b481-689080b5b843</p>
+                <button type="button" onclick="copiarPix()">📋 Copiar Chave PIX</button>
+                <img id="qr-code" src="Qrpagament.png" alt="QR Code PIX" />
             </div>
 
             <p><strong>3.</strong> Envie seu e-mail para receber o XITER e confirme o pagamento:</p>
@@ -372,7 +371,6 @@
     </div>
 
     <script>
-        // JavaScript embutido para facilitar teste
         function abrirModal() {
             document.getElementById("pagamentoModal").classList.add("active");
         }
@@ -392,7 +390,9 @@
 
             const chaveSelecionada = select.value;
             chavePix.textContent = chaveSelecionada;
-            qrCode.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(chaveSelecionada)}&size=160x160`;
+
+            // Sempre usa a imagem local do QR Code
+            qrCode.src = "Qrpagament.png";
         }
         function confirmarPagamento(event) {
             event.preventDefault();
@@ -406,7 +406,7 @@
             }
 
             const select = document.getElementById("produtoSelect");
-            const produtoNome = select.options[select.selectedIndex].text;
+            const produtoNome = select.options[select.selectedIndex].getAttribute('data-nome');
 
             alert("Obrigado pelo pagamento! Agora envie seu comprovante pelo WhatsApp.");
 
